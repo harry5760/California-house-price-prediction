@@ -25,11 +25,16 @@ def train_model(data):
 
     X = data.drop("median_house_value", axis=1)
     y = data["median_house_value"]
+    #Handle missing values 
+    X = X.fillna(X.median(numeric_only=True))
 
     num_cols = X.select_dtypes(include=["int64", "float64"]).columns
     cat_cols = X.select_dtypes(include=["object"]).columns
 
+    from sklearn.impute import SimpleImputer
+
     num_pipeline = Pipeline([
+        ("imputer", SimpleImputer(strategy="median")),
         ("scaler", StandardScaler())
     ])
 
