@@ -94,9 +94,22 @@ def train_model(data):
 model = train_model(df)
 
 # ---------------- HEADER ----------------
-st.markdown('<p class="title">🏠 AI House Price Predictor</p>', unsafe_allow_html=True)
-st.markdown('<p class="subtitle">Predict California house prices using Machine Learning</p>', unsafe_allow_html=True)
-st.markdown("---")
+st.markdown("""
+<div style='
+    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 30px;
+'>
+    <h1 style='color:white; font-size:48px; margin-bottom:10px;'>
+        🏠 California House Price Prediction
+    </h1>
+    <p style='color:#d3d3d3; font-size:20px;'>
+        Predict house prices using Machine Learning & AI
+    </p>
+</div>
+""", unsafe_allow_html=True)
 
 # ---------------- SIDEBAR ----------------
 st.sidebar.header("🏠 Enter House Details")
